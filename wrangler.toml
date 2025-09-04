@@ -1,8 +1,11 @@
 name = "dns-cache-grab"
 main = "src/index.js"
-compatibility_date = "2025-09-04"
+compatibility_date = "2024-09-01"
 
-[[kv_namespaces]]
-binding = "KV"
-id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"     # Lấy trong Cloudflare Dashboard
-preview_id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxx" # (tuỳ chọn)
+kv_namespaces = [
+  { binding = "KV", id = "abc123xyz456789..." } # <- thay ID bằng real ID trong Cloudflare
+]
+
+# Nếu dùng deploy tự động qua GitHub Actions
+[env.production]
+name = "dns-cache-grab"
