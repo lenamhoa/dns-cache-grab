@@ -1,11 +1,14 @@
 name = "dns-cache-grab"
 main = "src/index.js"
-compatibility_date = "2024-09-01"
+compatibility_date = "2025-09-04"
 
+# KV namespace gắn với binding tên "dns-cache-grab"
+# LẤY ID trong Dashboard > Workers & Pages > KV > chọn namespace > copy "Namespace ID"
 kv_namespaces = [
-  { binding = "KV", id = "abc123xyz456789..." } # <- thay ID bằng real ID trong Cloudflare
+  { binding = "dns-cache-grab", id = "PASTE_YOUR_KV_NAMESPACE_ID_HERE" }
 ]
 
-# Nếu dùng deploy tự động qua GitHub Actions
-[env.production]
-name = "dns-cache-grab"
+# (tuỳ chọn) biến môi trường – nếu bạn muốn đổi TTL hoặc endpoint không cần sửa code
+[vars]
+TTL_SECONDS = "1800"
+DNS_ENDPOINT = "https://dns.google/resolve"
