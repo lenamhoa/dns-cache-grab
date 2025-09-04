@@ -1,0 +1,8 @@
+name = "dns-cache-grab"
+main = "src/index.js"
+compatibility_date = "2025-09-04"
+
+[[kv_namespaces]]
+binding = "KV"
+id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"     # Lấy trong Cloudflare Dashboard
+preview_id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxx" # (tuỳ chọn)
